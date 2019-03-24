@@ -1,6 +1,6 @@
 ![alt text](./redis-node.jpg)
 
-[![Build Status](https://travis-ci.org/wooltar/microservices-node-services.svg?branch=master)](https://travis-ci.org/wooltar/microservices-node-redis)
+[![Build Status](https://travis-ci.org/wooltar/microservices-node-redis.svg?branch=master)](https://travis-ci.org/wooltar/microservices-node-redis)
 
 # BookShop Microservices
 
