@@ -129,8 +129,9 @@ exports.delete = async (req, res) => {
     }
 
 };
-async function updateStock(order, redis){
+async function updateStock(order){
     try{ 
+        console.log('updateStock')
         const query = {
             '_id': order.bookID
         }
@@ -143,7 +144,7 @@ async function updateStock(order, redis){
         let newOrder = JSON.parse(JSON.stringify(order));
         newOrder.price = book.price
 
-        redis.emit('updatingCustomerBalance', newOrder)
+        global.io.emit('updatingCustomerBalance', newOrder)
 
     }catch (err){
         throw err
@@ -152,7 +153,7 @@ async function updateStock(order, redis){
 }
 exports.updateStock = updateStock;
 
-async function rollBackStock(order, redis){
+async function rollBackStock(order){
     try{ 
         const query = {
             '_id': order.bookID
