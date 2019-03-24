@@ -1,6 +1,7 @@
 ![alt text](./redis-node.jpg)
 
 [![Build Status](https://travis-ci.org/wooltar/microservices-node-redis.svg?branch=master)](https://travis-ci.org/wooltar/microservices-node-redis)
+[![NPM version](https://img.shields.io/npm/v/standard-version.svg)](https://www.npmjs.com/package/standard-version)
 
 # BookShop Microservices
 
