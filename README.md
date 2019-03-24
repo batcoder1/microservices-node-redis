@@ -13,27 +13,27 @@ Microservice to handle shop books, runs in 5544 port
 
 ### Get all books
 
-GET http://localhost/books
+GET http://localhost:5544/books
 
 
 ### Get a book
 
-GET http://localhost/books/:id'
+GET http://localhost:5544/books/:id'
 
 
 ### Create a new book
 
-POST http://localhost/books/create
+POST http://localhost:5544/books/create
 
 
 ### Update a book
 
-POST http://localhost/books/update
+POST http://localhost:5544/books/update
 
 
 ### Delete a book
 
-DELETE http://localhost/books/:id
+DELETE http://localhost:5544/books/:id
 
 
 ## Customers
@@ -42,27 +42,27 @@ Microservice to handler shop customers, runs in 6666 port
 
 ### Get all customer
 
-GET http://localhost/customers
+GET http://localhost:6666/customers
 
 
 ### Get a customer
 
-GET http://localhost/customers/:id'
+GET http://localhost:6666/customers/:id'
 
 
 ### Create a new customer
 
-POST http://localhost/customers/create
+POST http://localhost:6666/customers/create
 
 
 ### Update a customer
 
-POST http://localhost/customers/update
+POST http://localhost:6666/customers/update
 
 
 ### Delete a customer
 
-DELETE http://localhost/customers/:id
+DELETE http://localhost:6666/customers/:id
 
 
 ## Orders
@@ -71,24 +71,24 @@ Microservice to handler shop orders, runs in 7777 port
 
 ### Get all orders
 
-GET http://localhost/orders
+GET http://localhost:7777/orders
 
 
 ### Get a order
 
-GET http://localhost/orders/:id'
+GET http://localhost:7777/orders/:id'
 
 
 ### Create a new order
 
-POST http://localhost/orders/create
+POST http://localhost:7777/orders/create
 
 
 ### Update a order
 
-POST http://localhost/orders/update
+POST http://localhost:7777/orders/update
 
 
 ### Delete a order
 
-DELETE http://localhost/orders/:id
+DELETE http://localhost:7777/orders/:id
