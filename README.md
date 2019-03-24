@@ -9,7 +9,7 @@ When a customer make a order, the stock is updated and the customer balance is u
 
 ## Books
 
-Microservice to handle shop books, runs in 5555 port
+Microservice to handle shop books, runs in 5544 port
 
 ### Get all books
 
