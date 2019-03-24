@@ -18,7 +18,7 @@ const redisAdapter = require('socket.io-redis')
 
 const redisServer = process.env.REDIS_SERVER || 'localhost'
 io.adapter(redisAdapter({ host: redisServer, port: 6379 }))
- 
+global.io = io;
 // client socket
 const socket = ioClient(hostName, { 'forceNew': true })
 
@@ -33,7 +33,7 @@ socket.on('connect', async () => {
   socket.on('updatingCustomerBalance', async (order) => {
     console.log(new Date() + ': Receiving price...')
     try{
-        await controller.updateBalance(order, io)
+        await controller.updateBalance(order)
 
     }catch(err){
         console.log('Error: updateBalance: ', err)

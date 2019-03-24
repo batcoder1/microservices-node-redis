@@ -18,7 +18,7 @@ const redisAdapter = require('socket.io-redis')
 
 const redisServer = process.env.REDIS_SERVER || 'localhost'
 io.adapter(redisAdapter({ host: redisServer, port: 6379 }))
- 
+global.io = io;
 // client socket
 const socket = ioClient(hostName, { 'forceNew': true })
 
@@ -27,7 +27,7 @@ socket.on('connect', async () => {
   socket.on('closingOrder', async (data) => {
     
     try {
-      await controller.closeOrder(data, io)
+      await controller.closeOrder(data)
     } catch (err) {
       console.log('Error: update Status order')
       
@@ -84,7 +84,6 @@ mongoose.connection.once('open', function () {
 })
 // parse application/json
 app.use(bodyParser.json())
-app.set('redis', io)
 require('./routes/index')(router);
 
 router.route('/').get(function(req, res, next) {

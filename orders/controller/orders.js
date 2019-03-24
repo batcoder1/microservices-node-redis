@@ -10,7 +10,6 @@ const axios = require("axios");
  */
 exports.create = async (req, res) => {
     try {
-      const redis = req.app.get('redis')
       if (!req.body.bookID ||
         !req.body.customerID  ) {  
         throw  'BRP'
@@ -30,7 +29,7 @@ exports.create = async (req, res) => {
       const orderSaved =await order.save();
     
       console.log('sending data..')
-      redis.emit('book_sold', orderSaved)
+      global.io.emit('book_sold', orderSaved)
       
       return res.status(200).send()
     } catch (err) {

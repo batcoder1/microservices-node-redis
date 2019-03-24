@@ -127,7 +127,7 @@ exports.delete = async (req, res) => {
 
 };
 
-async function updateBalance(order,redis){
+async function updateBalance(order){
     try{
         console.log('updateBalance.....', order)
         const customer = await Customer.findById(order.customerID);
@@ -149,10 +149,10 @@ async function updateBalance(order,redis){
         }       
         await Customer.updateOne(query, update);
         console.log('balance updated')
-        redis.emit('closingOrder', order)
+        global.io.emit('closingOrder', order)
     
     }catch (err){
-        redis.emit('rollback_order', err)
+        global.io.emit('rollback_order', err)
 
     }
 
